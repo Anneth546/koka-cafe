@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # InfinityFree serves the account root as htdocs, while Laravel expects
+    # the public directory to be the document root.
+    RewriteRule ^(?!public(?:/|$))(.*)$ public/$1 [L]
+</IfModule>
